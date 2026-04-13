@@ -210,7 +210,7 @@ impl Compiler {
     })
   }
 
-  #[cfg(test)]
+  #[cfg(any(test, fuzzing))]
   pub(crate) fn test_compile(src: &str) -> CompileResult<Justfile> {
     let tokens = Lexer::test_lex(src)?;
     let ast = Parser::parse(0, &[], None, &tokens, &PathBuf::new())?;

@@ -159,7 +159,7 @@ type FunctionResult = Result<String, String>;
 type RunResult<'a, T = ()> = Result<T, Error<'a>>;
 type SearchResult<T> = Result<T, SearchError>;
 
-#[cfg(test)]
+#[cfg(any(test, fuzzing))]
 #[macro_use]
 pub mod testing;
 

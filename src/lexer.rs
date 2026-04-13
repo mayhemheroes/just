@@ -41,7 +41,7 @@ impl<'src> Lexer<'src> {
     Self::new(path, src).tokenize()
   }
 
-  #[cfg(test)]
+  #[cfg(any(test, fuzzing))]
   pub(crate) fn test_lex(src: &'src str) -> CompileResult<'src, Vec<Token<'src>>> {
     Self::new("justfile".as_ref(), src).tokenize()
   }
