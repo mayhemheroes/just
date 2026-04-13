@@ -3,5 +3,6 @@ target: compile
 
 cmds:
   - cmd: /compile
+    timeout: 30
   - cmd: /compile_no_inst @@
     libfuzzer: false
